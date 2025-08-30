@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LumaForge Detailing</title>
+  <meta name="description" content="Premium mobile auto detailing in your driveway. Crystal-clean interiors, glossy exteriors, and protection that lasts.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="LumaForge Detailing Logo" class="logo"/>
+        <span class="brand-name">LumaForge Detailing</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="btn btn-primary small">Book Now</a>
+      </nav>
+      <button class="nav-toggle" aria-label="toggle navigation" onclick="toggleNav()">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Shine, Protected.</h1>
+        <p class="lead">
+          Mobile detailing that comes to you. We restore that fresh-off-the-lot look with meticulous interior care and a brilliant, hydrophobic exterior finish.
+        </p>
+        <div class="cta-row">
+          <a href="#pricing" class="btn btn-primary">View Packages</a>
+          <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+        </div>
+        <ul class="trust">
+          <li>✔ Transparent pricing</li>
+          <li>✔ Eco‑friendly products</li>
+          <li>✔ 100% satisfaction guarantee</li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div class="card">
+          <h3>Next Availability</h3>
+          <p id="next-slot">Checking…</p>
+          <a href="#contact" class="btn btn-primary block">Reserve a Slot</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Interior Refresh</h3>
+          <p>Full vacuum, wipe‑down, interior plastics dressed, windows crystal clear, and deodorize.</p>
+          <ul class="bullets">
+            <li>Steam on high‑touch areas</li>
+            <li>Pet hair add‑on available</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Exterior Glow</h3>
+          <p>Foam wash, decon, hand dry, tire & trim dressing, and a synthetic sealant for gloss & protection.</p>
+          <ul class="bullets">
+            <li>Two‑bucket hand wash</li>
+            <li>Hydrophobic top‑coat</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Full Detail</h3>
+          <p>Interior + Exterior for a showroom-ready finish. Our most popular choice for daily drivers.</p>
+          <ul class="bullets">
+            <li>Includes interior shampoo</li>
+            <li>Sealant protection up to 3 months</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section alt">
+    <div class="container">
+      <h2>Pricing</h2>
+      <div class="pricing-grid">
+        <div class="card price">
+          <h3>Interior Refresh</h3>
+          <div class="price-tag"><span>$</span>80+</div>
+          <p class="muted">Coupe/Sedan. SUVs & trucks slightly more depending on condition.</p>
+          <a href="#contact" class="btn btn-primary block">Book Interior</a>
+        </div>
+        <div class="card price featured">
+          <div class="badge">Most Popular</div>
+          <h3>Full Detail</h3>
+          <div class="price-tag"><span>$</span>120–150</div>
+          <p class="muted">Transparent cap at $150. Add-ons quoted up front.</p>
+          <a href="#contact" class="btn btn-primary block">Book Full Detail</a>
+        </div>
+        <div class="card price">
+          <h3>Exterior Glow</h3>
+          <div class="price-tag"><span>$</span>70+</div>
+          <p class="muted">Includes sealant protection for shine & water beading.</p>
+          <a href="#contact" class="btn btn-primary block">Book Exterior</a>
+        </div>
+      </div>
+      <div class="addons">
+        <h4>Add‑Ons</h4>
+        <ul>
+          <li>Engine bay detail — $25</li>
+          <li>Pet hair removal — $15–30</li>
+          <li>Headlight restoration — $40</li>
+          <li>Clay & iron decon — $30</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Before & After</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=1200&auto=format&fit=crop" alt="Shiny detailed car">
+        <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1200&auto=format&fit=crop" alt="Clean interior">
+        <img src="https://images.unsplash.com/photo-1518558419970-101ee48d48e9?q=80&w=1200&auto=format&fit=crop" alt="Foam wash">
+      </div>
+      <p class="muted center">Swap these with your own photos later for maximum trust.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <div class="container contact">
+      <h2>Book Your Detail</h2>
+      <p>Tell us your vehicle, location, and preferred time. We’ll confirm within minutes during business hours.</p>
+      <form class="card contact-form" onsubmit="return submitForm(event)">
+        <div class="row">
+          <label>
+            Name
+            <input required type="text" name="name" placeholder="Your name">
+          </label>
+          <label>
+            Email
+            <input required type="email" name="email" placeholder="you@example.com">
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Phone
+            <input required type="tel" name="phone" placeholder="(555) 123‑4567">
+          </label>
+          <label>
+            Vehicle
+            <input required type="text" name="vehicle" placeholder="e.g., 2013 Scion FR‑S">
+          </label>
+        </div>
+        <label>
+          Message
+          <textarea name="message" rows="4" placeholder="Where are you located? What package do you want? Preferred dates?"></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Send Request</button>
+        <p class="muted tiny">Note: This form uses your email app (no backend). For a full contact form with email delivery, we can add a free service later.</p>
+      </form>
+      <div class="quick-contacts">
+        <a class="btn btn-ghost" href="mailto:book@lumaforgedetailing.com">Email Us</a>
+        <a class="btn btn-ghost" href="tel:+1-555-555-5555">Call/Text</a>
+        <a class="btn btn-ghost" href="https://wa.me/15555555555">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="" class="logo small"/>
+        <span class="brand-name">LumaForge Detailing</span>
+      </div>
+      <div class="fine">
+        <span>&copy; <span id="year"></span> LumaForge Detailing. All rights reserved.</span>
+        <a href="#contact">Book now</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
