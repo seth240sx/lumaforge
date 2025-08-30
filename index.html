@@ -85,41 +85,83 @@
     </div>
   </section>
 
-  <section id="pricing" class="section alt">
-    <div class="container">
-      <h2>Pricing</h2>
-      <div class="pricing-grid">
-        <div class="card price">
-          <h3>Interior Refresh</h3>
-          <div class="price-tag"><span>$</span>80+</div>
-          <p class="muted">Coupe/Sedan. SUVs & trucks slightly more depending on condition.</p>
-          <a href="#contact" class="btn btn-primary block">Book Interior</a>
-        </div>
-        <div class="card price featured">
-          <div class="badge">Most Popular</div>
-          <h3>Full Detail</h3>
-          <div class="price-tag"><span>$</span>120–150</div>
-          <p class="muted">Transparent cap at $150. Add-ons quoted up front.</p>
-          <a href="#contact" class="btn btn-primary block">Book Full Detail</a>
-        </div>
-        <div class="card price">
-          <h3>Exterior Glow</h3>
-          <div class="price-tag"><span>$</span>70+</div>
-          <p class="muted">Includes sealant protection for shine & water beading.</p>
-          <a href="#contact" class="btn btn-primary block">Book Exterior</a>
-        </div>
-      </div>
-      <div class="addons">
-        <h4>Add‑Ons</h4>
+  <section id="pricing" class="pricing dark" style="--bg:#0b1220; --card:#111a2b; --text:#e6ecff; --muted:#b7c1dc; --brand:#2f68ff; --brand-2:#7aa2ff; --ring:#3b82f6;">
+  <style>
+    #pricing{background:var(--bg); color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; padding:72px 20px}
+    #pricing .wrap{max-width:1200px; margin:0 auto}
+    #pricing h2{font-size:42px; line-height:1.1; margin:0 0 28px; letter-spacing:.2px}
+    #pricing p.lead{color:var(--muted); margin-top:-6px; margin-bottom:30px}
+    #pricing .grid{display:grid; gap:22px; grid-template-columns:repeat(3, minmax(0, 1fr))}
+    @media (max-width: 960px){#pricing .grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:26px; position:relative; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .badge{position:absolute; top:14px; right:14px; background:rgba(47,104,255,.15); color:var(--brand-2); border:1px solid rgba(47,104,255,.35); padding:6px 10px; font-weight:600; font-size:12px; border-radius:999px}
+    .title{font-size:28px; font-weight:800; letter-spacing:.2px; margin:0 0 8px}
+    .sub{color:var(--muted); font-size:14px; margin-bottom:18px}
+    .price{font-size:36px; font-weight:900; margin:6px 0 2px}
+    .duration{color:var(--muted); font-size:13px; margin-bottom:12px}
+    ul{margin:12px 0 16px; padding-left:18px}
+    li{margin:8px 0; color:#d7e3ff}
+    .result{margin-top:8px; font-size:14px; color:#f3f6ff}
+    .cta{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; background:var(--brand); color:white; border:none; border-radius:12px; font-weight:700; text-decoration:none; transition:.2s transform, .2s box-shadow; box-shadow:0 6px 18px rgba(59,130,246,.35)}
+    .cta:hover{transform:translateY(-1px); box-shadow:0 10px 24px rgba(59,130,246,.45)}
+  </style>
+
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="lead">Transparent tiers. Small vs. big vehicle pricing shown; final quote confirmed up front.</p>
+
+    <div class="grid">
+      <!-- Classic Wash -->
+      <article class="card">
+        <h3 class="title">Classic Wash</h3>
+        <div class="sub">Small cars $80 • Big cars $100</div>
+        <div class="duration">~50 min – 1 hour</div>
         <ul>
-          <li>Engine bay detail — $25</li>
-          <li>Pet hair removal — $15–30</li>
-          <li>Headlight restoration — $40</li>
-          <li>Clay & iron decon — $30</li>
+          <li><strong>Deep Exterior Wash & Snow Foam</strong>: gentle hand scrub after a rich foam bath.</li>
+          <li><strong>Tire & Wheel Care</strong>: scrubbed clean and dressed for a long‑lasting satin shine.</li>
+          <li><strong>Crystal‑Clear Windows</strong>: streak‑free cleaning inside and out.</li>
+          <li><strong>Interior Renewal</strong>: spot‑treat stains, thoroughly shampoo; refreshed with professional extraction; full vacuum.</li>
+          <li><strong>Detailing to Perfection</strong>: interior & exterior surfaces brushed and restored.</li>
+          <li><strong>Complete Degreasing</strong>: door hinges, trunk seams, and jambs.</li>
         </ul>
-      </div>
+        <p class="result">✨ <em>Result:</em> Your vehicle looks, smells, and feels like new with a polished finish you’ll be proud to drive.</p>
+        <a class="cta" href="#book-classic">Book Classic</a>
+      </article>
+
+      <!-- VIP Wash -->
+      <article class="card">
+        <span class="badge">Most Popular</span>
+        <h3 class="title">VIP Wash</h3>
+        <div class="sub">Small cars $100 • Big cars $150</div>
+        <div class="duration">~2 – 3 hours</div>
+        <ul>
+          <li><strong>Premium Restoration Detail</strong> with everything in Classic.</li>
+          <li><strong>Seat Removal</strong> for full access; clean & treat carpet underneath.</li>
+          <li><strong>Fabric Protection</strong>: water‑repellent treatment to resist spills.</li>
+          <li><strong>Plastic Restoration</strong>: revive and condition interior plastics.</li>
+          <li><strong>Hidden Spaces Detailed</strong>: spare tire well & spare tire fully cleaned.</li>
+        </ul>
+        <p class="result">✨ <em>Result:</em> Comprehensive interior renewal to peak condition with long‑lasting protection and a factory‑fresh feel.</p>
+        <a class="cta" href="#book-vip">Book VIP</a>
+      </article>
+
+      <!-- Royal Wash -->
+      <article class="card">
+        <h3 class="title">Royal Wash</h3>
+        <div class="sub">Small cars $200 • Big cars $250</div>
+        <div class="duration">~3 – 4+ hours</div>
+        <ul>
+          <li>Everything in <strong>Classic + VIP</strong>.</li>
+          <li><strong>Full Ceramic Coating (Body & Glass)</strong>: glossy shield that promotes water beading and resists contaminants.</li>
+          <li><strong>Complete Clay Bar Treatment</strong>: removes embedded contaminants for ultra‑smooth paint.</li>
+          <li><strong>Engine Bay Cleaning</strong>: light yet precise wipe‑down for a crisp finish.</li>
+        </ul>
+        <p class="result">✨ <em>Result:</em> A glass‑like shine with superior paint protection—confidence that your finish is guarded for the long run.</p>
+        <a class="cta" href="#book-royal">Book Royal</a>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="gallery" class="section">
     <div class="container">
