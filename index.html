@@ -139,14 +139,14 @@
     </div>
   </section>
 
- <!-- CONTACT/BOOKING with PACKAGE DROPDOWN (Formspree integrated) -->
+ <!-- CONTACT/BOOKING with PACKAGE DROPDOWN (Formspree integrated, AJAX) -->
 <section id="contact" class="section alt">
   <div class="container contact">
     <h2>Book Your Detail</h2>
     <p>Tell us your vehicle, location, and preferred time. We’ll confirm within minutes during business hours.</p>
 
-    <!-- Update the action URL with your Formspree endpoint -->
-    <form class="card contact-form" action="https://formspree.io/f/xqadgwgv" method="POST">
+    <!-- Uses Formspree endpoint; AJAX handled in script.js -->
+    <form id="bookingForm" class="card contact-form" action="https://formspree.io/f/xqadgwgv" method="POST" onsubmit="return submitForm(event)">
       <div class="row">
         <label>
           Name
@@ -193,7 +193,7 @@
       <input type="hidden" name="_subject" value="New LumaForge Booking">
 
       <button class="btn btn-primary" type="submit">Send Request</button>
-      <p class="muted tiny">Your booking request will be securely sent to us via Formspree.</p>
+      <p id="formStatus" class="muted tiny" style="margin-top:8px;"></p>
     </form>
 
     <div class="quick-contacts">
@@ -217,34 +217,7 @@
     </div>
   </footer>
 
-  <!-- Mailto builder for the booking form -->
-  <script>
-    function submitForm(e){
-      e.preventDefault();
-      const f = e.target;
-      const name = f.name.value || "";
-      const email = f.email.value || "";
-      const phone = f.phone.value || "";
-      const vehicle = f.vehicle.value || "";
-      const pkg = f.package.value || "";
-      const where = f.where.value || "";
-      const msg = f.message.value || "";
-
-      const subject = `Booking Request - ${pkg}`;
-      const body =
-        `Name: ${name}%0D%0A` +
-        `Email: ${email}%0D%0A` +
-        `Phone: ${phone}%0D%0A` +
-        `Vehicle: ${vehicle}%0D%0A` +
-        `Location: ${where}%0D%0A` +
-        `Package: ${pkg}%0D%0A%0D%0A` +
-        `Message:%0D%0A${msg}`;
-
-      window.location.href = `mailto:lumaforgedetailing@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-      return false;
-    }
-  </script>
-
+  <!-- (Removed old inline mailto submitForm; AJAX handled in script.js) -->
   <script src="script.js"></script>
 </body>
 </html>
