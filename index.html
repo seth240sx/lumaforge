@@ -166,7 +166,36 @@
             <input type="text" name="vehicle" placeholder="e.g., 2013 Scion FR-S">
           </label>
         </div>
+        
+<form action="https://formspree.io/f/xyzabcd" method="POST" class="card contact-form">
+  <div class="row">
+    <label>Name <input required name="name" type="text" /></label>
+    <label>Email <input name="email" type="email" /></label>
+  </div>
+  <div class="row">
+    <label>Phone <input required name="phone" type="tel" /></label>
+    <label>Vehicle <input name="vehicle" type="text" /></label>
+  </div>
+  <div class="row">
+    <label>Package
+      <select name="package" required>
+        <option>Classic Wash – Small $80 / Big $100</option>
+        <option>VIP Wash – Small $100 / Big $150</option>
+        <option>Royal Wash – Small $200 / Big $250</option>
+      </select>
+    </label>
+    <label>Your Location <input name="where" type="text" /></label>
+  </div>
+  <label>Message <textarea name="message" rows="4"></textarea></label>
 
+  <!-- Optional: set email subject -->
+  <input type="hidden" name="_subject" value="New LumaForge Booking" />
+  <!-- Optional: redirect to a thank-you page -->
+  <input type="hidden" name="_redirect" value="https://your-domain/thanks.html" />
+
+  <button class="btn btn-primary" type="submit">Send Request</button>
+</form>
+        
         <!-- New dropdown to choose a package -->
         <div class="row">
           <label>
