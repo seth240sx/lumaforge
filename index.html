@@ -139,95 +139,71 @@
     </div>
   </section>
 
-  <!-- CONTACT/BOOKING with PACKAGE DROPDOWN -->
-  <section id="contact" class="section alt">
-    <div class="container contact">
-      <h2>Book Your Detail</h2>
-      <p>Tell us your vehicle, location, and preferred time. We’ll confirm within minutes during business hours.</p>
+ <!-- CONTACT/BOOKING with PACKAGE DROPDOWN (Formspree integrated) -->
+<section id="contact" class="section alt">
+  <div class="container contact">
+    <h2>Book Your Detail</h2>
+    <p>Tell us your vehicle, location, and preferred time. We’ll confirm within minutes during business hours.</p>
 
-      <form class="card contact-form" onsubmit="return submitForm(event)">
-        <div class="row">
-          <label>
-            Name
-            <input required type="text" name="name" placeholder="Your name">
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@example.com">
-          </label>
-        </div>
-        <div class="row">
-          <label>
-            Phone
-            <input required type="tel" name="phone" placeholder="(555) 123-4567">
-          </label>
-          <label>
-            Vehicle
-            <input type="text" name="vehicle" placeholder="e.g., 2013 Scion FR-S">
-          </label>
-        </div>
-        
-<form action="https://formspree.io/f/xyzabcd" method="POST" class="card contact-form">
-  <div class="row">
-    <label>Name <input required name="name" type="text" /></label>
-    <label>Email <input name="email" type="email" /></label>
-  </div>
-  <div class="row">
-    <label>Phone <input required name="phone" type="tel" /></label>
-    <label>Vehicle <input name="vehicle" type="text" /></label>
-  </div>
-  <div class="row">
-    <label>Package
-      <select name="package" required>
-        <option>Classic Wash – Small $80 / Big $100</option>
-        <option>VIP Wash – Small $100 / Big $150</option>
-        <option>Royal Wash – Small $200 / Big $250</option>
-      </select>
-    </label>
-    <label>Your Location <input name="where" type="text" /></label>
-  </div>
-  <label>Message <textarea name="message" rows="4"></textarea></label>
-
-  <!-- Optional: set email subject -->
-  <input type="hidden" name="_subject" value="New LumaForge Booking" />
-  <!-- Optional: redirect to a thank-you page -->
-  <input type="hidden" name="_redirect" value="https://your-domain/thanks.html" />
-
-  <button class="btn btn-primary" type="submit">Send Request</button>
-</form>
-        
-        <!-- New dropdown to choose a package -->
-        <div class="row">
-          <label>
-            Package
-            <select name="package" required>
-              <option value="Classic Wash">Classic Wash – Small $80 / Big $100</option>
-              <option value="VIP Wash">VIP Wash – Small $100 / Big $150</option>
-              <option value="Royal Wash">Royal Wash – Small $200 / Big $250</option>
-            </select>
-          </label>
-          <label>
-            Full Address
-            <input type="text" name="where" placeholder="Hesperia / Victorville / Apple Valley">
-          </label>
-        </div>
-
+    <!-- Update the action URL with your Formspree endpoint -->
+    <form class="card contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+      <div class="row">
         <label>
-          Message
-          <textarea name="message" rows="4" placeholder="Preferred dates/times. Any add-ons or special notes?"></textarea>
+          Name
+          <input required type="text" name="name" placeholder="Your name">
         </label>
-
-        <button class="btn btn-primary" type="submit">Send Request</button>
-        <p class="muted tiny">Note: This opens your email app (no backend). We can add a server form later if you want.</p>
-      </form>
-
-      <div class="quick-contacts">
-        <a class="btn btn-ghost" href="mailto:lumaforgedetailing@gmail.com">Email Us</a>
-        <a class="btn btn-ghost" href="tel:+1-555-555-5555">Call/Text</a>
-        <a class="btn btn-ghost" href="https://wa.me/15555555555">WhatsApp</a>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com">
+        </label>
       </div>
+
+      <div class="row">
+        <label>
+          Phone
+          <input required type="tel" name="phone" placeholder="(555) 123-4567">
+        </label>
+        <label>
+          Vehicle
+          <input type="text" name="vehicle" placeholder="e.g., 2013 Scion FR-S">
+        </label>
+      </div>
+
+      <div class="row">
+        <label>
+          Package
+          <select name="package" required>
+            <option value="Classic Wash">Classic Wash – Small $80 / Big $100</option>
+            <option value="VIP Wash">VIP Wash – Small $100 / Big $150</option>
+            <option value="Royal Wash">Royal Wash – Small $200 / Big $250</option>
+          </select>
+        </label>
+        <label>
+          Full Address
+          <input type="text" name="where" placeholder="Hesperia / Victorville / Apple Valley">
+        </label>
+      </div>
+
+      <label>
+        Message
+        <textarea name="message" rows="4" placeholder="Preferred dates/times. Any add-ons or special notes?"></textarea>
+      </label>
+
+      <!-- Optional hidden fields -->
+      <input type="hidden" name="_subject" value="New LumaForge Booking">
+      <input type="hidden" name="_redirect" value="https://yourdomain.com/thanks.html">
+
+      <button class="btn btn-primary" type="submit">Send Request</button>
+      <p class="muted tiny">Your booking request will be securely sent to us via Formspree.</p>
+    </form>
+
+    <div class="quick-contacts">
+      <a class="btn btn-ghost" href="mailto:lumaforgedetailing@gmail.com">Email Us</a>
+      <a class="btn btn-ghost" href="tel:+1-555-555-5555">Call/Text</a>
+      <a class="btn btn-ghost" href="https://wa.me/15555555555">WhatsApp</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <footer class="site-footer">
     <div class="container foot">
