@@ -16,7 +16,7 @@ Vehicle: ${data.get('vehicle')}
 Message:
 ${data.get('message')}`
   );
-  window.location.href = `mailto:book@lumaforgedetailing.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:lumaforgedetailing@gmail.com?subject=${subject}&body=${body}`;
   return false;
 }
 (function(){
