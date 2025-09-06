@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LumaForge Detailing</title>
+  <meta name="description" content="Premium mobile auto detailing in your driveway. Crystal-clean interiors, glossy exteriors, and protection that lasts.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .site-header {
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header .shine {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0.5;
+      background: linear-gradient(
+        75deg,
+        transparent 30%,
+        rgba(255,255,255,.12) 45%,
+        rgba(255,255,255,.35) 50%,
+        rgba(255,255,255,.12) 55%,
+        transparent 70%
+      );
+      transform: translateX(-120%);
+      animation: sweep 7.5s ease-in-out infinite;
+    }
+    @keyframes sweep {
+      0%, 20% { transform: translateX(-120%); }
+      55%     { transform: translateX(0%); }
+      100%    { transform: translateX(120%); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shine"></div>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="LumaForge Detailing Logo" class="logo"/>
+        <span class="brand-name">LumaForge Detailing</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="btn btn-primary small">Book Now</a>
+      </nav>
+      <button class="nav-toggle" aria-label="toggle navigation" onclick="toggleNav()">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Shine, Protected.</h1>
+        <p class="lead">
+          Mobile detailing that comes to you. We restore that fresh-off-the-lot look with meticulous interior care and a brilliant, hydrophobic exterior finish.
+        </p>
+        <div class="cta-row">
+          <a href="#pricing" class="btn btn-primary">View Packages</a>
+          <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+        </div>
+        <ul class="trust">
+          <li>✔ Transparent pricing</li>
+          <li>✔ Eco-friendly products</li>
+          <li>✔ 100% satisfaction guarantee</li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div class="card">
+          <h3>Next Availability</h3>
+          <p id="next-slot">Checking…</p>
+          <a href="#contact" class="btn btn-primary block">Reserve a Slot</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
