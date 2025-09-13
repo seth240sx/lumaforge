@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header with cool grey shimmer -->
+  <!-- Header with shimmer -->
   <header class="site-header">
     <div class="shine" aria-hidden="true"></div>
     <div class="container nav">
@@ -204,7 +204,6 @@
 
   <!-- Lightbox JS -->
   <script>
-    // Simple nav toggle stub (if you already have one in script.js, remove this)
     function toggleNav(){
       const nav = document.querySelector('nav');
       nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
@@ -233,20 +232,12 @@
     }
 
     closeBtn.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.style.display === 'flex') closeLightbox(); });
 
-    // Escape key to close
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.style.display === 'flex') closeLightbox();
-    });
-
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
-  <!-- Your main script (optional) -->
   <script src="script.js"></script>
 </body>
 </html>
