@@ -111,26 +111,34 @@
     </div>
   </section>
 
-  <!-- Polaroid Gallery with Lightbox -->
+  <!-- Gallery with two Polaroid pairs and lightbox -->
   <section id="gallery" class="section">
     <div class="container">
       <h2 class="center" style="margin-bottom:16px">Recent Work</h2>
 
-      <div class="polaroid-stack">
-        <!-- BEFORE Polaroid -->
+      <!-- Pair 1: Joy Before / After -->
+      <div class="polaroid-stack" style="margin-bottom:40px">
         <figure class="polaroid before">
-          <img src="./assets/joybefore.png"
-               alt="Before detail - black sedan with road dust on paint and wheels"
-               class="zoomable" loading="lazy">
+          <img src="./assets/joybefore.png" alt="Before detail - black sedan with road dust on paint and wheels" class="zoomable" loading="lazy">
           <figcaption class="caption">Before</figcaption>
         </figure>
 
-        <!-- AFTER Polaroid -->
         <figure class="polaroid after">
-          <img src="./assets/joyafter.png"
-               alt="After detail - black sedan glossy finish with clean wheels and glass"
-               class="zoomable" loading="lazy">
+          <img src="./assets/joyafter.png" alt="After detail - black sedan glossy finish with clean wheels and glass" class="zoomable" loading="lazy">
           <figcaption class="caption">After</figcaption>
+        </figure>
+      </div>
+
+      <!-- Pair 2: Mustang / Hellcat -->
+      <div class="polaroid-stack">
+        <figure class="polaroid before">
+          <img src="./assets/mustang.png" alt="Blue Mustang front three-quarter with carbon hood" class="zoomable" loading="lazy">
+          <figcaption class="caption">Mustang</figcaption>
+        </figure>
+
+        <figure class="polaroid after">
+          <img src="./assets/hellcat.png" alt="Red Challenger Hellcat rear three-quarter with black hood" class="zoomable" loading="lazy">
+          <figcaption class="caption">Hellcat</figcaption>
         </figure>
       </div>
     </div>
@@ -209,7 +217,6 @@
       nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Lightbox behavior
     const zoomables = document.querySelectorAll('.zoomable');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
