@@ -117,7 +117,7 @@ h3{margin:0 0 8px;color:#f7f7f7}
 }
 #gallery .polaroid{
   position:absolute; top:6%; left:8%;
-  width:min(540px,55%); /* bigger */
+  width:min(540px,55%); /* main size */
   background:#fff; border-radius:6px;
   padding:12px 12px 42px;
   box-shadow:0 18px 40px rgba(0,0,0,.35),0 6px 16px rgba(0,0,0,.25);
@@ -142,9 +142,19 @@ h3{margin:0 0 8px;color:#f7f7f7}
 #gallery .polaroid.before:hover{ --tilt:-6deg; }
 #gallery .polaroid.after:hover{ --tilt:5deg; }
 
-/* Side-by-side row for multiple stacks (e.g., Raye pairs on same row) */
-.polaroid-row{display:flex;flex-wrap:wrap;gap:40px;justify-content:center}
-.polaroid-row > .polaroid-stack{flex:1 1 520px;min-width:300px}
+/* Side-by-side row for multiple stacks (e.g., two pairs on same row) */
+.polaroid-row{
+  display:flex;flex-wrap:wrap;gap:32px;justify-content:center;
+}
+.polaroid-row > .polaroid-stack{
+  flex:0 1 560px;            /* ensure wide stacks so cards don't shrink */
+  max-width:560px;
+  height:clamp(420px,52vw,650px);
+}
+/* Force large card size inside the two-up row so they match single stacks */
+.polaroid-row .polaroid{ width:min(520px,92%); }
+.polaroid-row .polaroid.before{ left:6%; }
+.polaroid-row .polaroid.after { right:6%; }
 
 /* Lightbox */
 .lightbox{
@@ -193,23 +203,10 @@ h3{margin:0 0 8px;color:#f7f7f7}
   #gallery .polaroid-stack{ height:auto; display:grid; gap:18px; }
   #gallery .polaroid{ position:static; width:100%; transform:none; z-index:auto; }
   #gallery .polaroid:hover{ transform:translateY(-2px) scale(1.01); }
+
   .polaroid-row{gap:18px}
-  .polaroid-row > .polaroid-stack{flex:1 1 100%}
-  /* Make side-by-side stacks use the same large polaroid size */
-.polaroid-row { gap: 32px; justify-content: center; }
-
-.polaroid-row > .polaroid-stack{
-  flex: 0 1 560px;           /* give each stack enough width */
-  max-width: 560px;
-  height: clamp(420px, 52vw, 650px); /* a bit taller to fit overlap */
-}
-
-/* Force large card width inside the two-up row */
-.polaroid-row .polaroid{
-  width: min(520px, 92%);    /* near the single-stack size */
-}
-
-/* keep overlap spacing working in the tighter stack */
-.polaroid-row .polaroid.before{ left: 6%; }
-.polaroid-row .polaroid.after { right: 6%; }
+  .polaroid-row > .polaroid-stack{flex:1 1 100%;max-width:100%;height:auto}
+  .polaroid-row .polaroid{ width:100%; }
+  .polaroid-row .polaroid.before{ left:auto; }
+  .polaroid-row .polaroid.after { right:auto; }
 }
