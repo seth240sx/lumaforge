@@ -1,90 +1,186 @@
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#f2f2f2;background:#000}
+
+/* Base */
+html,body{
+  margin:0;padding:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:#f2f2f2;
+  background:#000000;
+}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
 /* Header / shimmer */
-.site-header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(0,0,0,.7);border-bottom:1px solid rgba(204,0,0,.25);z-index:10;overflow:hidden}
-.site-header .shine{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:.5;background:linear-gradient(75deg,transparent 30%,rgba(255,255,255,.12) 45%,rgba(255,255,255,.35) 50%,rgba(255,255,255,.12) 55%,transparent 70%);transform:translateX(-120%);animation:sweep 7.5s ease-in-out infinite}
-@keyframes sweep{0%,20%{transform:translateX(-120%)}55%{transform:translateX(0%)}100%{transform:translateX(120%)}}
+.site-header{
+  position:sticky;top:0;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,.7);
+  border-bottom:1px solid rgba(204,0,0,.25);
+  z-index:10;
+  overflow:hidden; /* for shimmer clip */
+}
+.site-header .shine{
+  position:absolute; inset:0; pointer-events:none; mix-blend-mode:screen; opacity:.5;
+  background:linear-gradient(75deg,transparent 30%,rgba(255,255,255,.12) 45%,rgba(255,255,255,.35) 50%,rgba(255,255,255,.12) 55%,transparent 70%);
+  transform:translateX(-120%);
+  animation:sweep 7.5s ease-in-out infinite;
+}
+@keyframes sweep{
+  0%,20% { transform: translateX(-120%) }
+  55%    { transform: translateX(0%) }
+  100%   { transform: translateX(120%) }
+}
+
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .brand{display:flex;align-items:center;gap:10px}
 .brand-name{font-weight:800;letter-spacing:.2px;color:#f5f5f5}
-.logo{height:34px}.logo.small{height:24px}
+.logo{height:34px}
+.logo.small{height:24px}
 nav{display:flex;gap:18px;align-items:center}
 nav a{color:#ffcccc;text-decoration:none;font-weight:600;opacity:.9}
 nav a:hover{opacity:1}
 .nav-toggle{display:none;background:none;border:none;color:#f2f2f2;font-size:22px}
 
 /* Hero */
-.hero{padding:56px 0 40px;background:radial-gradient(1200px 500px at 80% -20%,#220000 0%,rgba(34,0,0,0) 60%),linear-gradient(180deg,#000 0,#000 60%,#140000)}
+.hero{
+  padding:56px 0 40px;
+  background:
+    radial-gradient(1200px 500px at 80% -20%, #220000 0%, rgba(34,0,0,0) 60%),
+    linear-gradient(180deg,#000 0,#000 60%,#140000);
+}
 .hero-grid{display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
-h1{font-size:44px;margin:0 0 10px;color:#fff}
+h1{font-size:44px;margin:0 0 10px;color:#ffffff}
 .lead{color:#ffb3b3;font-size:18px;line-height:1.6}
 .cta-row{display:flex;gap:12px;margin-top:16px}
 
 /* Buttons */
-.btn{border:1px solid rgba(204,0,0,.35);padding:10px 16px;border-radius:12px;text-decoration:none;display:inline-block;font-weight:700;color:#f2f2f2;background:transparent}
+.btn{
+  border:1px solid rgba(204,0,0,.35);
+  padding:10px 16px;border-radius:12px;
+  text-decoration:none;display:inline-block;
+  font-weight:700;color:#f2f2f2;background:transparent
+}
 .btn.small{padding:8px 12px;border-radius:10px;font-size:14px}
 .btn-primary{background:#b30000;border-color:#990000;color:#fff}
 .btn-primary:hover{filter:brightness(1.06)}
 .btn-ghost{background:transparent}
 .btn.block{display:block;text-align:center;width:100%}
 
-/* Cards/sections */
-.card{background:linear-gradient(180deg,rgba(179,0,0,.08),rgba(26,0,0,.05));border:1px solid rgba(204,0,0,.28);border-radius:16px;padding:18px;color:#f2f2f2;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+/* Trust text */
+.trust{margin:18px 0 0;padding:0;list-style:none;color:#ffb3b3;display:grid;gap:6px}
+
+/* Cards */
+.card{
+  background:linear-gradient(180deg,rgba(179,0,0,.08),rgba(26,0,0,.05));
+  border:1px solid rgba(204,0,0,.28);
+  border-radius:16px;padding:18px;color:#f2f2f2;
+  box-shadow:0 10px 30px rgba(0,0,0,.5)
+}
 .hero-card .card{min-height:180px}
+
+/* Sections */
 .section{padding:56px 0}
-.section.alt{background:#140000;border-top:1px solid rgba(204,0,0,.2);border-bottom:1px solid rgba(204,0,0,.2)}
-h2{color:#fff;margin:0 0 20px;font-size:30px} h3{margin:0 0 8px;color:#f7f7f7}
+.section.alt{
+  background:#140000;
+  border-top:1px solid rgba(204,0,0,.2);
+  border-bottom:1px solid rgba(204,0,0,.2)
+}
+
+h2{color:#ffffff;margin:0 0 20px;font-size:30px}
+h3{margin:0 0 8px;color:#f7f7f7}
+
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .bullets{margin:12px 0 0;padding-left:18px;color:#ffcccc}
 
 /* Pricing */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.price .price-tag{font-size:38px;font-weight:800;color:#fff;margin:4px 0 8px}
+.price .price-tag{font-size:38px;font-weight:800;color:#ffffff;margin:4px 0 8px}
 .price .price-tag span{font-size:22px;opacity:.85;margin-right:2px}
 .price .muted{color:#ffb3b3}
 .price.featured{position:relative;border:1px solid #b30000}
-.price .badge{position:absolute;top:12px;right:12px;background:#b30000;color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.price .badge{
+  position:absolute;top:12px;right:12px;
+  background:#b30000;color:#fff;padding:6px 10px;
+  border-radius:999px;font-size:12px;font-weight:800
+}
 
-/* Polaroid Gallery (scoped) */
-#gallery .polaroid-stack{position:relative;width:min(980px,92vw);margin:0 auto 32px;height:clamp(300px,50vw,520px)}
+/* Add-ons list */
+.addons ul{color:#ffcccc;columns:2;gap:40px;padding-left:18px}
+
+/* =========================
+   Polaroid Gallery (bigger)
+   ========================= */
+#gallery .polaroid-stack{
+  position:relative;
+  width:min(1100px,95vw);
+  margin:0 auto 32px;
+  height:clamp(400px,60vw,650px);
+}
 #gallery .polaroid{
-  position:absolute;top:6%;left:8%;width:min(440px,48%);
-  background:#fff;border-radius:6px;padding:12px 12px 42px;
+  position:absolute; top:6%; left:8%;
+  width:min(540px,55%); /* bigger */
+  background:#fff; border-radius:6px;
+  padding:12px 12px 42px;
   box-shadow:0 18px 40px rgba(0,0,0,.35),0 6px 16px rgba(0,0,0,.25);
-  transform-origin:center;z-index:1;user-select:none;
+  transform-origin:center;
   transition:transform .25s ease, box-shadow .25s ease, z-index .2s ease;
+  user-select:none; z-index:1;
 }
-#gallery .polaroid img{display:block;width:100%;height:auto;border-radius:4px}
+#gallery .polaroid img{ width:100%; height:auto; display:block; border-radius:4px; }
 #gallery .polaroid .caption{
-  letter-spacing:.08em;text-transform:uppercase;font-weight:700;font-size:12px;color:#111;opacity:.8;
-  position:absolute;left:16px;bottom:10px
+  letter-spacing:.08em; text-transform:uppercase; font-weight:700; font-size:12px; color:#111; opacity:.8;
+  position:absolute; left:16px; bottom:10px;
 }
-#gallery .polaroid.before{transform:rotate(-6deg)}
-#gallery .polaroid.after{left:auto;right:8%;top:10%;transform:rotate(5deg);z-index:2}
+/* Tilt & overlap */
+#gallery .polaroid.before{ transform:rotate(-6deg); }
+#gallery .polaroid.after{ left:auto; right:8%; top:10%; transform:rotate(5deg); z-index:2; }
+/* Hover lift */
 #gallery .polaroid:hover{
   transform:translateY(-4px) scale(1.02) rotate(var(--tilt,0deg));
   box-shadow:0 28px 60px rgba(0,0,0,.44),0 10px 24px rgba(0,0,0,.28);
   z-index:3;
 }
-#gallery .polaroid.before:hover{--tilt:-6deg}
-#gallery .polaroid.after:hover{--tilt:5deg}
+#gallery .polaroid.before:hover{ --tilt:-6deg; }
+#gallery .polaroid.after:hover{ --tilt:5deg; }
+
+/* Side-by-side row for multiple stacks (e.g., Raye pairs on same row) */
+.polaroid-row{display:flex;flex-wrap:wrap;gap:40px;justify-content:center}
+.polaroid-row > .polaroid-stack{flex:1 1 520px;min-width:300px}
 
 /* Lightbox */
-.lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);backdrop-filter:blur(4px);justify-content:center;align-items:center;cursor:zoom-out}
-.lightbox img{max-width:90%;max-height:90%;border-radius:8px;box-shadow:0 20px 40px rgba(0,0,0,.6)}
-.lightbox .close{position:absolute;top:24px;right:36px;color:#fff;font-size:40px;font-weight:bold;cursor:pointer;background:none;border:none;line-height:1}
+.lightbox{
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,.85); backdrop-filter:blur(4px);
+  justify-content:center; align-items:center; cursor:zoom-out;
+}
+.lightbox img{
+  max-width:90%; max-height:90%;
+  border-radius:8px; box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+.lightbox .close{
+  position:absolute; top:24px; right:36px;
+  color:#fff; font-size:40px; font-weight:bold; cursor:pointer;
+  background:none; border:none; line-height:1;
+}
 
-/* Contact/footer */
+/* Contact */
 .center{text-align:center}
 .contact .row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.contact-form input,.contact-form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(204,0,0,.28);background:rgba(179,0,0,.05);color:#f2f2f2}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:12px;border-radius:10px;
+  border:1px solid rgba(204,0,0,.28);
+  background:rgba(179,0,0,.05);color:#f2f2f2
+}
 .contact-form label{display:grid;gap:6px;color:#ffcccc;font-weight:600}
 .quick-contacts{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.site-footer{padding:26px 0;background:#000;border-top:1px solid rgba(204,0,0,.25);color:#ffb3b3}
+
+/* Footer */
+.site-footer{
+  padding:26px 0;background:#000;
+  border-top:1px solid rgba(204,0,0,.25);color:#ffb3b3
+}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.muted{color:#ffcccc}.tiny{font-size:12px}
+.muted{color:#ffcccc}
+.tiny{font-size:12px}
 
 /* Responsive */
 @media (max-width: 900px){
@@ -94,7 +190,9 @@ h2{color:#fff;margin:0 0 20px;font-size:30px} h3{margin:0 0 8px;color:#f7f7f7}
   .nav-toggle{display:block}
 
   /* Polaroids stack on mobile */
-  #gallery .polaroid-stack{height:auto;display:grid;gap:18px}
-  #gallery .polaroid{position:static;width:100%;transform:none;z-index:auto}
-  #gallery .polaroid:hover{transform:translateY(-2px) scale(1.01)}
+  #gallery .polaroid-stack{ height:auto; display:grid; gap:18px; }
+  #gallery .polaroid{ position:static; width:100%; transform:none; z-index:auto; }
+  #gallery .polaroid:hover{ transform:translateY(-2px) scale(1.01); }
+  .polaroid-row{gap:18px}
+  .polaroid-row > .polaroid-stack{flex:1 1 100%}
 }
