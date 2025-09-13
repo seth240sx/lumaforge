@@ -195,4 +195,21 @@ h3{margin:0 0 8px;color:#f7f7f7}
   #gallery .polaroid:hover{ transform:translateY(-2px) scale(1.01); }
   .polaroid-row{gap:18px}
   .polaroid-row > .polaroid-stack{flex:1 1 100%}
+  /* Make side-by-side stacks use the same large polaroid size */
+.polaroid-row { gap: 32px; justify-content: center; }
+
+.polaroid-row > .polaroid-stack{
+  flex: 0 1 560px;           /* give each stack enough width */
+  max-width: 560px;
+  height: clamp(420px, 52vw, 650px); /* a bit taller to fit overlap */
+}
+
+/* Force large card width inside the two-up row */
+.polaroid-row .polaroid{
+  width: min(520px, 92%);    /* near the single-stack size */
+}
+
+/* keep overlap spacing working in the tighter stack */
+.polaroid-row .polaroid.before{ left: 6%; }
+.polaroid-row .polaroid.after { right: 6%; }
 }
