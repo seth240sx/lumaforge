@@ -111,7 +111,7 @@
     </div>
   </section>
 
-  <!-- Gallery with three Polaroid pairs -->
+  <!-- Gallery with four Polaroid pairs -->
   <section id="gallery" class="section">
     <div class="container">
       <h2 class="center" style="margin-bottom:16px">Recent Work</h2>
@@ -142,17 +142,33 @@
         </figure>
       </div>
 
-      <!-- Pair 3: Raye Before / After -->
-      <div class="polaroid-stack">
-        <figure class="polaroid before">
-          <img src="./assets/rayebefore.jpg" alt="Raye vehicle before detailing" class="zoomable" loading="lazy">
-          <figcaption class="caption">Before</figcaption>
-        </figure>
+      <!-- Row with Raye Before/After and Inside Front/Back -->
+      <div class="polaroid-row" style="display:flex;flex-wrap:wrap;gap:40px;justify-content:center">
+        <!-- Pair 3: Raye Before / After -->
+        <div class="polaroid-stack" style="flex:1 1 420px;min-width:300px">
+          <figure class="polaroid before">
+            <img src="./assets/rayebefore.png" alt="Raye vehicle before detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Before</figcaption>
+          </figure>
 
-        <figure class="polaroid after">
-          <img src="./assets/rayeafter.png" alt="Raye vehicle after detailing" class="zoomable" loading="lazy">
-          <figcaption class="caption">After</figcaption>
-        </figure>
+          <figure class="polaroid after">
+            <img src="./assets/rayeafter.png" alt="Raye vehicle after detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">After</figcaption>
+          </figure>
+        </div>
+
+        <!-- Pair 4: Raye Inside Front / Back -->
+        <div class="polaroid-stack" style="flex:1 1 420px;min-width:300px">
+          <figure class="polaroid before">
+            <img src="./assets/rayeinsidefront.png" alt="Raye vehicle inside front before detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Inside Front</figcaption>
+          </figure>
+
+          <figure class="polaroid after">
+            <img src="./assets/rayeinsideback.png" alt="Raye vehicle inside back after detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Inside Back</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
 
@@ -261,4 +277,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
