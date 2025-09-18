@@ -7,16 +7,16 @@
   <meta name="description" content="Contact LumaForge Detailing for mobile detailing in the High Desert. Call, text, email, or DM to book your wash.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
 <body>
   <header class="site-header">
     <div class="shine" aria-hidden="true"></div>
     <div class="container nav">
       <div class="brand">
-        <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-          <img src="/assets/logo.png" alt="LumaForge Detailing Logo" class="logo"/>
+        <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+          <img src="assets/logo.png" alt="LumaForge Detailing Logo" class="logo"/>
           <span class="brand-name">LumaForge Detailing</span>
         </a>
       </div>
@@ -24,7 +24,7 @@
         <a href="index.html#gallery">Gallery</a>
         <a class="disabled" style="opacity:0.5;pointer-events:none;">About Us (coming soon)</a>
         <a href="contact.html" aria-current="page">Contact</a>
-        <a href="/#contact" class="btn btn-primary small">Book a wash</a>
+        <a href="contact.html" class="btn btn-primary small">Book a wash</a>
       </nav>
       <button class="nav-toggle" aria-label="toggle navigation" onclick="toggleNav()">☰</button>
     </div>
@@ -36,9 +36,10 @@
         <h1>Contact LumaForge</h1>
         <p class="lead">We’re quick to reply during business hours. Call, text, or email to get your detail on the calendar.</p>
         <div class="cta-row">
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lumaforgedetailing@gmail.com" class="btn btn-primary">📧 Email Us</a>
-  <a href="https://instagram.com/lumaforgedetailing" target="_blank" rel="noopener" class="btn btn-ghost">📱 Instagram</a>
-</div>
+          <a href="tel:+14428998743" class="btn btn-primary">Call / Text</a>
+          <a href="mailto:lumaforgedetailing@gmail.com" class="btn btn-ghost">Email Us</a>
+          <a href="https://instagram.com/lumaforgedetailing" target="_blank" rel="noopener" class="btn btn-ghost">@lumaforgedetailing</a>
+        </div>
         <ul class="trust" style="margin-top:12px">
           <li>✔ Hesperia • Apple Valley • Victorville</li>
           <li>✔ Fully insured • We bring power & water</li>
@@ -48,9 +49,11 @@
         <div class="card">
           <h3>Direct contacts</h3>
           <ul class="bullets" style="margin:0">
-  <li><strong>Phone:</strong> (442) 899-8743</li>
-</ul>
-          <a href="/#contact" class="btn btn-primary block" style="margin-top:12px">Book a wash</a>
+            <li><strong>Phone:</strong> <a href="tel:+14428998743">(442) 899-8743</a></li>
+            <li><strong>Email:</strong> <a href="mailto:lumaforgedetailing@gmail.com">lumaforgedetailing@gmail.com</a></li>
+            <li><strong>Instagram:</strong> <a href="https://instagram.com/lumaforgedetailing" target="_blank" rel="noopener">@lumaforgedetailing</a></li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary block" style="margin-top:12px">Book a wash</a>
         </div>
       </div>
     </div>
@@ -68,7 +71,7 @@
   <footer class="site-footer">
     <div class="container foot">
       <div class="brand">
-        <img src="/assets/logo.png" alt="" class="logo small"/>
+        <img src="assets/logo.png" alt="" class="logo small"/>
         <span class="brand-name">LumaForge Detailing</span>
       </div>
       <div class="fine">
@@ -85,18 +88,6 @@
     }
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <script src="/script.js"></script>
-
-  <script>
-    document.addEventListener('visibilitychange', function () {
-      document.title = "LumaForge Detailing";
-      if (document.hidden) {
-        document.title = "👉 Don't forget about this...";
-      } else {
-        document.title = "👉 Don’t forget about this...";
-      }
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
