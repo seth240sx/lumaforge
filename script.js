@@ -124,4 +124,35 @@ function submitForm(e) {
     container.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
     container.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
   }
+// --- Happy Drivers marquee initializer ---
+(function () {
+  const track = document.getElementById('reviewTrack');
+  if (!track) return;
+
+  // Duplicate children once for a seamless loop
+  const originals = Array.from(track.children);
+  if (originals.length) {
+    const clones = originals.map(n => n.cloneNode(true));
+    track.append(...clones);
+  }
+
+  // Speed control (pixels per second)
+  const PX_PER_SEC = 80;
+
+  // Compute duration and start animation
+  requestAnimationFrame(() => {
+    const totalWidth = track.scrollWidth;
+    const halfWidth = totalWidth / 2;
+    const duration = Math.max(10, halfWidth / PX_PER_SEC);
+    track.style.setProperty('--marquee-duration', `${duration}s`);
+    track.classList.add('animate-marquee');
+    track.style.animation = `lf-marquee ${duration}s linear infinite`;
+  });
+
+  // Pause on hover
+  const container = track.closest('.card') || track.parentElement;
+  if (container) {
+    container.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
+    container.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
+  }
 })();
