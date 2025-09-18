@@ -268,42 +268,83 @@ h3{margin:0 0 8px;color:#f7f7f7}
 }
 
 
-/* --- Reviews marquee (auto-scroll like Tino) --- */
-#reviews .card {
-  position: relative;
-  overflow: hidden;
+/* ==========================
+   Mobile polish & responsive
+   ========================== */
+
+/* Global image safety */
+img { max-width: 100%; height: auto; }
+
+/* Type scales that adapt */
+h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; }
+h2 { font-size: clamp(22px, 4vw, 30px); }
+.lead { font-size: clamp(15px, 2.8vw, 18px); }
+
+/* Container padding on small screens */
+@media (max-width: 900px){
+  .container { padding-left: 16px; padding-right: 16px; }
+  .section { padding: 42px 0; }
+  .card { padding: 16px; }
 }
 
-#reviews .review-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 48px;            /* space between reviews */
-  white-space: nowrap;
-  will-change: transform;
+/* Header / Nav */
+.site-header { padding: 0 0; }
+@media (max-width: 900px){
+  .nav { gap: 10px; }
+  nav {
+    display: none; /* toggled via JS */
+    position: absolute; right: 16px; top: 58px;
+    background: rgba(0,0,0,.9);
+    border: 1px solid rgba(204,0,0,.28);
+    border-radius: 12px;
+    padding: 12px;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 20;
+  }
+  nav a, nav .btn { font-size: 16px; }
+  .btn.small { font-size: 15px; padding: 10px 14px; }
 }
 
-#reviews .review {
-  display: inline-block;
-  margin: 0;
-  padding: 12px 24px;
+/* Hero layout on mobile */
+@media (max-width: 900px){
+  .hero { padding-top: 38px; }
+  .cta-row { flex-direction: column; gap: 10px; }
+  .btn.block, .cta-row .btn { width: 100%; text-align: center; }
 }
 
-#reviews .review-track.animate-marquee {
-  animation: lf-marquee var(--marquee-duration, 30s) linear infinite;
+/* Pricing grid responsive */
+@media (max-width: 1100px){
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px){
+  .pricing-grid { grid-template-columns: 1fr; }
+  .price .badge { top: 10px; right: 10px; }
 }
 
-/* Pause on hover */
-#reviews .card:hover .review-track.animate-marquee {
-  animation-play-state: paused;
+/* FAQ spacing tweaks */
+.faq details + details { margin-top: 10px; }
+.faq summary { cursor: pointer; font-weight: 700; }
+
+/* Gallery tighten on small screens (keeps your existing overrides) */
+@media (max-width: 900px){
+  #gallery.section { padding: 28px 0; }
+  .polaroid-row { gap: 16px; }
 }
 
-/* Seamless loop */
-@keyframes lf-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+/* Reviews marquee: tighter gap on small, avoid overflow */
+@media (max-width: 900px){
+  #reviews .review-track { gap: 28px; }
+  #reviews .review { padding: 10px 16px; }
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  #reviews .review-track.animate-marquee { animation: none; }
+/* Contact form inputs: comfortable tap targets */
+.contact-form input, .contact-form textarea, .contact-form select {
+  min-height: 44px;
+  font-size: 16px; /* prevents iOS zoom */
+}
+
+/* Footer stack on small */
+@media (max-width: 720px){
+  .foot { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
