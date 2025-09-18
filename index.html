@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LumaForge Detailing</title>
+  <meta name="description" content="Premium mobile auto detailing in your driveway. Crystal-clean interiors, glossy exteriors, and protection that lasts.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1758205016" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDetailing",
+  "name": "LumaForge Detailing",
+  "image": "https://lumaforgedetailing.com/assets/logo.png",
+  "url": "https://lumaforgedetailing.com",
+  "telephone": "+1-555-555-5555",
+  "areaServed": ["Hesperia","Apple Valley","Victorville","Adelanto","Oak Hills"],
+  "priceRange": "$$",
+  "sameAs": [],
+  "address": { "@type": "PostalAddress", "addressLocality": "Hesperia", "addressRegion": "CA", "addressCountry": "US" }
+}
+</script>
+
+</head>
+<body>
+  <!-- Header with shimmer -->
+  <header class="site-header">
+    <div class="shine" aria-hidden="true"></div>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="LumaForge Detailing Logo" class="logo"/>
+        <span class="brand-name">LumaForge Detailing</span>
+      </div>
+      
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a class="disabled" style="opacity:0.5;pointer-events:none;">About Us (coming soon)</a>
+        <a href="contact.html">Contact</a>
+        <a href="#contact" class="btn btn-primary small">Book a wash</a>
+      </nav>
+      <button class="nav-toggle" aria-label="toggle navigation" onclick="toggleNav()">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Mobile detailing in Hesperia showroom results at your driveway.</h1>
+        <p class="lead">
+          We come to you with swirl‑safe washes, deep interior renewal, and durable protection fast, friendly, and fully insured.
+        </p>
+        <div class="cta-row">
+          <a href="#pricing" class="btn btn-primary">View Packages</a>
+          <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+        </div>
+        <ul class="trust">
+          <li>✔ Transparent pricing</li>
+          <li>✔ Eco-friendly products</li>
+          <li>✔ 100% satisfaction guarantee</li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div class="card">
+          <h3>Next Availability</h3>
+          <p id="next-slot">Checking…</p>
+          <a href="#contact" class="btn btn-primary block">Reserve a Slot</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing dark">
+    <div class="container wrap">
+      <h2>Services and Pricing</h2>
+      <p class="lead">Transparent tiers. Small vs. big vehicle pricing shown; final quote confirmed up front.</p>
+
+      <div class="pricing-grid">
+        <article class="card price">
+          <h3 class="title">Classic Wash</h3>
+          <div class="sub">Small cars $80 • Big cars $100</div>
+          <div class="muted">~50 min   1 hour</div>
+          <ul class="bullets">
+            <li><strong>Deep Exterior Wash & Snow Foam</strong> after a rich foam bath</li>
+            <li><strong>Tire & Wheel Care</strong> cleaned + dressed</li>
+            <li><strong>Crystal-Clear Windows</strong> inside & out</li>
+            <li><strong>Interior Renewal</strong> spot-treat, shampoo, extract, vacuum</li>
+            <li><strong>Detailing to Perfection</strong> interior & exterior surfaces restored</li>
+            <li><strong>Complete Degreasing</strong> door hinges, trunk seams, jambs</li>
+          </ul>
+        </article>
+
+        <article class="card price featured">
+          <span class="badge">Most Popular</span>
+          <h3 class="title">VIP Wash</h3>
+          <div class="sub">Small cars $100 • Big cars $150</div>
+          <div class="muted">~2   3 hours</div>
+          <ul class="bullets">
+            <li><strong>Premium Restoration Detail</strong> (everything in Classic)</li>
+            <li><strong>Seat Removal</strong> for full access & deep clean</li>
+            <li><strong>Fabric Protection</strong> water-repellent treatment</li>
+            <li><strong>Plastic Restoration</strong> revive & condition plastics</li>
+            <li><strong>Hidden Spaces Detailed</strong> spare tire well cleaned</li>
+          </ul>
+        </article>
+
+        <article class="card price">
+          <h3 class="title">Royal Wash</h3>
+          <div class="sub">Small cars $200 • Big cars $250</div>
+          <div class="muted">~3   4+ hours</div>
+          <ul class="bullets">
+            <li>Everything in <strong>Classic + VIP</strong></li>
+            <li><strong>Full Ceramic Coating (Body & Glass)</strong></li>
+            <li><strong>Complete Clay Bar Treatment</strong></li>
+            <li><strong>Engine Bay Cleaning</strong></li>
+          </ul>
+        </article>
+      </div>
+
+      
+<div class="card" style="margin-top:18px">
+  <h3>Service Area</h3>
+  <p class="muted">Hesperia • Apple Valley • Victorville • Adelanto • Oak Hills</p>
+  <p class="muted" style="margin-top:6px">Fully insured • We bring our own power & water • 48‑hour rain grace touch‑up</p>
+</div>
+
+      <div class="card" style="margin-top:24px;text-align:center">
+        <h3>Payment Options Accepted</h3>
+        <p style="margin:8px 0 0">💸 Cash &nbsp; • &nbsp; 📱 Venmo &nbsp; • &nbsp; 💵 Cash App</p>
+      </div>
+    </div>
+  </section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <h2>Questions, answered.</h2>
+    <div class="faq">
+      <details class="card">
+        <summary>Do you need power or water?</summary>
+        <p>We’re self‑contained. We bring everything we need.</p>
+      </details>
+      <details class="card">
+        <summary>What if it rains?</summary>
+        <p>We offer a complimentary reschedule window and a 48‑hour rain grace touch‑up.</p>
+      </details>
+      <details class="card">
+        <summary>How should I prep?</summary>
+        <p>Please remove valuables and child seats if you want us to clean beneath them.</p>
+      </details>
+      <details class="card">
+        <summary>What areas do you serve?</summary>
+        <p>Hesperia, Apple Valley, Victorville, Adelanto, Oak Hills.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+  <!-- Gallery with four Polaroid pairs -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="center" style="margin-bottom:16px">Recent Work</h2>
+
+      <!-- Pair 1: Joy Before / After -->
+      <div class="polaroid-stack" style="margin-bottom:40px">
+        <figure class="polaroid before">
+          <img src="./assets/joybefore.png" alt="Before detail - black sedan with road dust on paint and wheels" class="zoomable" loading="lazy">
+          <figcaption class="caption">Before</figcaption>
+        </figure>
+
+        <figure class="polaroid after">
+          <img src="./assets/joyafter.png" alt="After detail - black sedan glossy finish with clean wheels and glass" class="zoomable" loading="lazy">
+          <figcaption class="caption">After</figcaption>
+        </figure>
+      </div>
+
+      <!-- Pair 2: Mustang / Hellcat -->
+      <div class="polaroid-stack" style="margin-bottom:40px">
+        <figure class="polaroid before">
+          <img src="./assets/mustang.png" alt="Blue Mustang front three-quarter with carbon hood" class="zoomable" loading="lazy">
+          <figcaption class="caption">Mustang</figcaption>
+        </figure>
+
+        <figure class="polaroid after">
+          <img src="./assets/hellcat.png" alt="Red Challenger Hellcat rear three-quarter with black hood" class="zoomable" loading="lazy">
+          <figcaption class="caption">Hellcat</figcaption>
+        </figure>
+      </div>
+
+      <!-- Row with Raye Before/After and Inside Front/Back -->
+      <div class="polaroid-row" style="display:flex;flex-wrap:wrap;gap:40px;justify-content:center">
+        <!-- Pair 3: Raye Before / After -->
+        <div class="polaroid-stack" style="flex:1 1 420px;min-width:300px">
+          <figure class="polaroid before">
+            <img src="./assets/rayebefore.jpg" alt="Raye vehicle before detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Before</figcaption>
+          </figure>
+
+          <figure class="polaroid after">
+            <img src="./assets/rayeafter.png" alt="Raye vehicle after detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">After</figcaption>
+          </figure>
+        </div>
+
+        <!-- Pair 4: Raye Inside Front / Back -->
+        <div class="polaroid-stack" style="flex:1 1 420px;min-width:300px">
+          <figure class="polaroid before">
+            <img src="./assets/rayeinsidefront.png" alt="Raye vehicle inside front before detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Inside Front</figcaption>
+          </figure>
+
+          <figure class="polaroid after">
+            <img src="./assets/rayeinsideback.png" alt="Raye vehicle inside back after detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Inside Back</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="close" aria-label="Close image">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  
+<!-- Reviews -->
+<section id="reviews" class="section">
+  <div class="container">
+    <h2>Happy Drivers</h2>
+    <div class="card">
+      <div class="review-track" id="reviewTrack">
+        <blockquote class="review">“Insanely clean inside and out. Booked same day.   <strong>Marissa • Hesperia</strong>”</blockquote>
+        <blockquote class="review">“Pet hair gone, carpets look new. Worth every penny.   <strong>Devon • Apple Valley</strong>”</blockquote>
+        <blockquote class="review">“Paint feels slick and glossy; beading is crazy.   <strong>Luis • Victorville</strong>”</blockquote>
+        <blockquote class="review">“On time, professional, and fast.   <strong>Renee • Oak Hills</strong>”</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="contact" class="section alt">
+    <div class="container contact">
+      <h2>Book Your Detail</h2>
+      <p>Tell us your vehicle, location, and preferred time. We’ll confirm within minutes during business hours.</p>
+
+      <form id="bookingForm" class="card contact-form" action="https://formspree.io/f/xqadgwgv" method="POST">
+        <div class="row">
+          <label> Name <input required type="text" name="name" placeholder="Your name"> </label>
+          <label> Email <input type="email" name="email" placeholder="you@example.com"> </label>
+        </div>
+
+        <div class="row">
+          <label> Phone <input required type="tel" name="phone" placeholder="(555) 123-4567"> </label>
+          <label> Vehicle <input type="text" name="vehicle" placeholder="e.g., 2013 Scion FR-S"> </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Package
+            <select name="package" required>
+              <option value="Classic Wash">Classic Wash $80 small / $100 big</option>
+              <option value="VIP Wash">VIP Wash $100 small / $150 big</option>
+              <option value="Royal Wash">Royal Wash $200 small / $250 big</option>
+            </select>
+          </label>
+          <label> Full Address <input type="text" name="where" placeholder="Hesperia / Victorville / Apple Valley"> </label>
+        </div>
+
+<label> Message
+          <textarea name="message" rows="4" placeholder="Preferred dates/times. Any add-ons or special notes?"></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="New LumaForge Booking">
+        <button class="btn btn-primary" type="submit">Submit Booking</button>
+        <p id="formStatus" class="muted tiny" style="margin-top:8px;"></p>
+      </form>
+
+      <div class="quick-contacts">
+        <a class="btn btn-ghost" href="mailto:lumaforgedetailing@gmail.com">Email Us</a>
+        <a class="btn btn-ghost" href="tel:+1-555-555-5555">Call/Text</a>
+        <a class="btn btn-ghost" href="https://wa.me/15555555555">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container foot">
+      <div class="brand">
+        <img src="assets/logo.png" alt="" class="logo small"/>
+        <span class="brand-name">LumaForge Detailing</span>
+      </div>
+      <div class="fine">
+        <span>&copy; <span id="year"></span> LumaForge Detailing. All rights reserved.</span>
+        <a href="contact.html">Book now</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox JS -->
+  <script>
+    function toggleNav(){
+      const nav = document.querySelector('nav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    const zoomables = document.querySelectorAll('.zoomable');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('#lightbox .close');
+
+    zoomables.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.getAttribute('src');
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.style.display = 'none';
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.removeAttribute('src');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.style.display === 'flex') closeLightbox(); });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script src="script.js?v=1758205016"></script>
+
+  <script>
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        document.title = "👉 Don't forget this...";
+      } else {
+        document.title = "LumaForge Detailing";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+
