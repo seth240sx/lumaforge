@@ -10,7 +10,7 @@ function submitForm(e) {
   const form = e.target;
   const statusEl = document.getElementById('formStatus');
   const submitBtn = form.querySelector('button[type="submit"]');
-  const endpoint = form.getAttribute('action'); // Formspree endpoint
+  const endpoint = form.getAttribute('action');
   const formData = new FormData(form);
 
   const originalText = submitBtn.textContent;
@@ -26,23 +26,18 @@ function submitForm(e) {
     .then(async (resp) => {
       if (resp.ok) {
         form.reset();
-        // Ensure all fields are cleared
         form.querySelectorAll('input:not([type="hidden"]), textarea').forEach(el => (el.value = ''));
         form.querySelectorAll('select').forEach(el => (el.selectedIndex = 0));
         const firstInput = form.querySelector('input, select, textarea');
         if (firstInput) firstInput.focus();
 
         statusEl.textContent = '✅ Thanks! Your booking request was sent.';
-        setTimeout(() => {
-          statusEl.textContent = '';
-        }, 6000);
+        setTimeout(() => { statusEl.textContent = ''; }, 6000);
       } else {
         let msg = 'Something went wrong. Please try again or email us directly.';
         try {
           const data = await resp.json();
-          if (data.errors?.length) {
-            msg = data.errors.map((e) => e.message).join(', ');
-          }
+          if (data.errors?.length) msg = data.errors.map((e) => e.message).join(', ');
         } catch (_) {}
         statusEl.textContent = msg;
       }
@@ -58,21 +53,48 @@ function submitForm(e) {
   return false;
 }
 
+// Footer year
 (function () {
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
-
-  const next = document.getElementById('next-slot');
-  if (next) {
-    const now = new Date();
-    const inTwoDays = new Date(now.getTime() + 48 * 60 * 60 * 1000);
-    next.textContent =
-      inTwoDays.toLocaleString([], { weekday: 'long', month: 'short', day: 'numeric' }) +
-      ' — openings available';
-  }
 })();
 
-// Reviews marquee pause on hover
+// --- Next Availability (Los Angeles 6 AM–8 PM) ---
+(function(){
+  const el = document.getElementById('next-slot');
+  if(!el) return;
+
+  const now = new Date();
+  const laNow = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+  const opening = 6;   // 6 AM PT
+  const closing = 20;  // 8 PM PT
+
+  let nextSlot = new Date(laNow);
+
+  if (laNow.getHours() >= closing) {
+    // After hours: tomorrow 6 AM
+    nextSlot.setDate(nextSlot.getDate() + 1);
+    nextSlot.setHours(opening, 0, 0, 0);
+  } else if (laNow.getHours() < opening) {
+    // Before opening: today 6 AM
+    nextSlot.setHours(opening, 0, 0, 0);
+  } else {
+    // During hours: round up to next full hour
+    nextSlot.setHours(laNow.getHours() + 1, 0, 0, 0);
+  }
+
+  const opts = {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: 'America/Los_Angeles'
+  };
+  el.textContent = `Earliest: ${nextSlot.toLocaleString([], opts)} (6 AM–8 PM PT)`;
+})();
+
+// --- Reviews marquee pause on hover ---
 (function(){
   const track = document.getElementById('reviewTrack');
   if(track){
@@ -81,33 +103,18 @@ function submitForm(e) {
   }
 })();
 
-// Simple "next availability" estimator (tomorrow 10:00 local)
-(function(){
-  const el = document.getElementById('next-slot');
-  if(!el) return;
-  const now = new Date();
-  const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 10, 0);
-  const opts = { weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit' };
-  el.textContent = `Earliest: ${tomorrow.toLocaleString([], opts)}`;
-})();
-
-
 // --- Reviews / Happy Drivers marquee initializer ---
 (function () {
   const track = document.getElementById('reviewTrack');
   if (!track) return;
 
-  // Duplicate children once for a seamless loop
   const originals = Array.from(track.children);
   if (originals.length) {
     const clones = originals.map(n => n.cloneNode(true));
     track.append(...clones);
   }
 
-  // Speed (pixels per second)
   const PX_PER_SEC = 80;
-
-  // Compute duration and start animation
   requestAnimationFrame(() => {
     const totalWidth = track.scrollWidth;
     const halfWidth = totalWidth / 2;
@@ -117,11 +124,4 @@ function submitForm(e) {
     track.style.animation = `lf-marquee ${duration}s linear infinite`;
     console.log('Marquee ON', { halfWidth, duration });
   });
-
-  // Pause on hover
-  const container = track.closest('.card') || track.parentElement;
-  if (container) {
-    container.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
-    container.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
-  }
 })();
