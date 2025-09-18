@@ -246,7 +246,45 @@ h3{margin:0 0 8px;color:#f7f7f7}
   .polaroid-row .polaroid.before{left:auto}
   .polaroid-row .polaroid.after {right:auto}
 }
+/* --- Reviews marquee (auto-scroll like Tino) --- */
+#reviews .card {
+  position: relative;
+  overflow: hidden;
+}
 
+#reviews .review-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;            /* space between reviews */
+  white-space: nowrap;
+  will-change: transform;
+}
+
+#reviews .review {
+  display: inline-block;
+  margin: 0;
+  padding: 12px 24px;
+}
+
+#reviews .review-track.animate-marquee {
+  animation: lf-marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+/* Pause on hover */
+#reviews .card:hover .review-track.animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Seamless loop */
+@keyframes lf-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #reviews .review-track.animate-marquee { animation: none; }
+}
 
 /* Tighter layout for Direct contacts card */
 .card.direct-contacts {
