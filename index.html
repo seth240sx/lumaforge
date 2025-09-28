@@ -147,17 +147,74 @@
     </div>
   </section>
 
-  <!-- Gallery -->
+<!-- Gallery with four Polaroid pairs -->
   <section id="gallery" class="section">
     <div class="container">
       <h2 class="center" style="margin-bottom:16px">Recent Work</h2>
-      <!-- (your gallery images stay the same) -->
+
+      <!-- Pair 1: Joy Before / After -->
+      <div class="polaroid-stack" style="margin-bottom:40px">
+        <figure class="polaroid before">
+          <img src="./assets/joybefore.png" alt="Before detail - black sedan with road dust on paint and wheels" class="zoomable" loading="lazy">
+          <figcaption class="caption">Before</figcaption>
+        </figure>
+
+        <figure class="polaroid after">
+          <img src="./assets/joyafter.png" alt="After detail - black sedan glossy finish with clean wheels and glass" class="zoomable" loading="lazy">
+          <figcaption class="caption">After</figcaption>
+        </figure>
+      </div>
+
+      <!-- Pair 2: Mustang / Hellcat -->
+      <div class="polaroid-stack" style="margin-bottom:40px">
+        <figure class="polaroid before">
+          <img src="./assets/mustang.png" alt="Blue Mustang front three-quarter with carbon hood" class="zoomable" loading="lazy">
+          <figcaption class="caption">Mustang</figcaption>
+        </figure>
+
+        <figure class="polaroid after">
+          <img src="./assets/hellcat.png" alt="Red Challenger Hellcat rear three-quarter with black hood" class="zoomable" loading="lazy">
+          <figcaption class="caption">Hellcat</figcaption>
+        </figure>
+      </div>
+
+      <!-- Row with Raye Before/After and Inside Front/Back -->
+      <div class="polaroid-row" style="display:flex;flex-wrap:wrap;gap:40px;justify-content:center">
+        <!-- Pair 3: Raye Before / After -->
+        <div class="polaroid-stack" style="flex:1 1 420px;min-width:300px">
+          <figure class="polaroid before">
+            <img src="./assets/rayebefore.jpg" alt="Raye vehicle before detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Before</figcaption>
+          </figure>
+
+          <figure class="polaroid after">
+            <img src="./assets/rayeafter.png" alt="Raye vehicle after detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">After</figcaption>
+          </figure>
+        </div>
+
+        <!-- Pair 4: Raye Inside Front / Back -->
+        <div class="polaroid-stack" style="flex:1 1 420px;min-width:300px">
+          <figure class="polaroid before">
+            <img src="./assets/rayeinsidefront.png" alt="Raye vehicle inside front before detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Inside Front</figcaption>
+          </figure>
+
+          <figure class="polaroid after">
+            <img src="./assets/rayeinsideback.png" alt="Raye vehicle inside back after detailing" class="zoomable" loading="lazy">
+            <figcaption class="caption">Inside Back</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
+
+    <!-- Lightbox overlay -->
     <div id="lightbox" class="lightbox" aria-hidden="true">
       <button class="close" aria-label="Close image">&times;</button>
       <img id="lightbox-img" src="" alt="">
     </div>
   </section>
+
 
   <!-- Reviews -->
   <section id="reviews" class="section">
@@ -249,3 +306,4 @@
   </script>
 </body>
 </html>
+
